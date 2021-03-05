@@ -30,5 +30,10 @@ resource "aws_s3_bucket" "media-archive-bucket" {
       days          = 7
       storage_class = "GLACIER"
     }
+
+    transition {
+      days          = 365
+      storage_class = "DEEP_ARCHIVE"
+    }
   }
 }
