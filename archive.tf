@@ -9,11 +9,11 @@ terraform {
 
 provider "aws" {
   profile = "default"
-  region  = "us-west-2" #or nearer
+  region  = "eu-west-1" #or nearer
 }
 
 resource "aws_s3_bucket" "media-archive-bucket" {
-  bucket = "my-media-archive"
+  bucket_prefix = "my-media-archive-"
   acl    = "private" #?authenticated-read? or grant?
 
   lifecycle_rule {
